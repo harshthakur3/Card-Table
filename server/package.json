@@ -1,0 +1,26 @@
+{
+  "name": "cardgame-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Card Table game server: Express + Socket.io, rooms, and every game engine.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch-path=src --watch-path=games --watch-path=shared src/index.js",
+    "start": "node src/index.js",
+    "test": "node --test \"shared/**/*.test.js\" \"games/**/*.test.js\" \"test/**/*.test.js\""
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  },
+  "optionalDependencies": {
+    "ioredis": "^5.4.2"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}

@@ -1,0 +1,19 @@
+# Render Blueprint: deploys the game server from the server/ folder.
+# In Render: New > Blueprint > pick this repository > Apply.
+services:
+  - type: web
+    name: card-table-server
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      # Your Vercel site address, e.g. https://card-table.vercel.app
+      # Leave it empty to allow any site to connect.
+      - key: CORS_ORIGIN
+        sync: false
